@@ -9,7 +9,10 @@
       "Bash(./node_modules/.bin/tailwindcss init:*)",
       "Bash(ls /Users/chakriyasuy/files-confession/node_modules/.bin/tail*)",
       "Bash(node -e \"console.log\\(require\\('./node_modules/tailwindcss/package.json'\\).version\\)\")",
-      "Bash(ls /Users/chakriyasuy/files-confession/postcss.config.*)"
+      "Bash(ls /Users/chakriyasuy/files-confession/postcss.config.*)",
+      "Bash(npm run:*)",
+      "Bash(echo \"Strict\" | npx next lint --init 2>&1 || true)",
+      "Bash(npx husky:*)"
     ]
   }
 }

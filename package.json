@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "post-to-facebook": "tsx scripts/post-to-facebook.ts",
-    "archive-confessions": "tsx scripts/archive-confessions.ts"
+    "archive-confessions": "tsx scripts/archive-confessions.ts",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "next lint --fix --file"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",
@@ -23,6 +27,10 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.27",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1",
     "tsx": "^4.19.1",
