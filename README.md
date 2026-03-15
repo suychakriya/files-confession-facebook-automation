@@ -18,6 +18,7 @@ An anonymous confession website where anyone can share their thoughts publicly w
 - **Database** — Supabase (PostgreSQL)
 - **Automation** — GitHub Actions (scheduled workflows)
 - **Facebook posting** — Facebook Graph API
+- **Code quality** — ESLint, Prettier, Husky (auto-fix on commit)
 
 ## Getting Started
 
@@ -71,16 +72,17 @@ Open [http://localhost:3000](http://localhost:3000)
 
 Add the following secrets to your GitHub repository under **Settings → Secrets → Actions**:
 
-| Secret | Description |
-|--------|-------------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key |
-| `FACEBOOK_PAGE_ID` | Facebook page ID |
+| Secret                       | Description                |
+| ---------------------------- | -------------------------- |
+| `NEXT_PUBLIC_SUPABASE_URL`   | Supabase project URL       |
+| `SUPABASE_SERVICE_ROLE_KEY`  | Supabase service role key  |
+| `FACEBOOK_PAGE_ID`           | Facebook page ID           |
 | `FACEBOOK_PAGE_ACCESS_TOKEN` | Facebook page access token |
 
 ## Automated Workflows
 
 ### Post to Facebook
+
 - Runs daily at **11:00 AM** and **7:00 PM** (Bangkok, UTC+7)
 - Fetches all unposted confessions from the database
 - Posts each one to the Facebook page as `#filesConfessions1`, `#filesConfessions2`, etc.
@@ -88,6 +90,7 @@ Add the following secrets to your GitHub repository under **Settings → Secrets
 - Can be triggered manually from the Actions tab
 
 ### Monthly Archive
+
 - Runs on the **3rd of every month**
 - Exports previous month's confessions to a CSV file
 - Uploads the CSV to Supabase Storage (archives bucket)
@@ -103,6 +106,16 @@ npm run post-to-facebook
 # Archive and delete previous month's confessions
 npm run archive-confessions
 ```
+
+## Code Quality
+
+This project uses **ESLint**, **Prettier**, and **Husky** to automatically format and lint code on every commit.
+
+- **Prettier** — formats indentation, spacing, and code style
+- **ESLint** — catches code quality issues
+- **Husky** — runs both automatically as a pre-commit hook
+
+No manual setup needed — it runs automatically when you `git commit`.
 
 ## Deployment
 
