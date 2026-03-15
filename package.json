@@ -1,0 +1,31 @@
+{
+  "name": "files-confession",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "post-to-facebook": "tsx scripts/post-to-facebook.ts",
+    "archive-confessions": "tsx scripts/archive-confessions.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "dotenv": "^17.3.1",
+    "next": "^14.2.35",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5"
+  }
+}
